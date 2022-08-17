@@ -4,12 +4,12 @@ type MessageProps = {
     isLoggedIn: boolean
 }
 
-export default function Message(props: MessageProps) {
-  const {count = 0} = props;
+export default function Message({count = 0, isLoggedIn, name}: MessageProps) {
+
   return (
     <div>
-      {props.isLoggedIn && 
-        `${props.name}, you have ${count} unread messages.`
+      {isLoggedIn && 
+        `${name}, you have ${count} unread messages.`
       }
       </div>
   )

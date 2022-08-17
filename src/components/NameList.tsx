@@ -1,8 +1,7 @@
+import { Name } from './Person.types'
+
 type NameListProps = {
-    names: {
-        first: string
-        second: string
-    }[]
+    names: Name[]
 }
 
 export default function NameList(props: NameListProps) {
@@ -10,7 +9,7 @@ export default function NameList(props: NameListProps) {
     <div>Guest list:</div>
     <ul>{
         props.names.map((name, i) =>
-            <li key={i}>{name.first} {name.second}</li>)
+            <li key={i}>{name.first} {name.last}</li>)
     }
     </ul>
     </>

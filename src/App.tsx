@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import './App.css';
 import Button from './components/Button';
+import Container from './components/Container';
 import Greet from './components/Greet';
 import Heading from './components/Heading';
 import Input from './components/Input';
+import LoggedIn from './components/state/LoggedIn';
 import Message from './components/Message';
 import NameList from './components/NameList';
 import Oscar from './components/Oscar';
+import Person from './components/Person';
+import Counter from './components/state/Counter';
 
 const nameList = [{
     first: 'Karry',
-    second: 'Grant'
+    last: 'Grant'
   },
   {
     first: 'Princess',
-    second: 'Diana'
+    last: 'Diana'
   },
   {
     first: 'Bruce',
-    second: 'Wayne'
+    last: 'Wayne'
   }]
 
 function App() {
@@ -30,6 +34,7 @@ function App() {
   return (
     <div className="App">
       <Greet name="Valeriya"/>
+      <Person name={nameList[0]}/>
       <Message count={10} name="Valeriya" isLoggedIn={true}/>
       <Message name="Valeriya" isLoggedIn={true}/>
       <NameList names={nameList}/>
@@ -40,6 +45,9 @@ function App() {
       <Button handleClick={(e) => console.log('clicked', e)}/>
       <Input value={inputValue}
         handleChange={handleChange}/>
+        <Container styles={{border: '1px solid gray', padding: '1em'}}/>
+        <LoggedIn/>
+        <Counter/>
     </div>
   );
 }
