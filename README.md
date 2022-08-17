@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# React + TypeScript course
+
+Training types in React
+
+Playlist: https://www.youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK
+
+#
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
