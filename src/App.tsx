@@ -11,6 +11,13 @@ import NameList from './components/NameList';
 import Oscar from './components/Oscar';
 import Person from './components/Person';
 import Counter from './components/state/Counter';
+import { ThemeContextProvider } from './components/context/ThemeContext';
+import Box from './components/context/Box';
+import { UserContextProvide } from './components/context/UserContext';
+import { User } from './components/context/User';
+import { DomRef } from './components/ref/DomRef';
+import { MutableRef } from './components/ref/MutableRef';
+import CounterClass from './components/class/Counter';
 
 const nameList = [{
     first: 'Karry',
@@ -43,11 +50,19 @@ function App() {
         <Heading>Oscar goes to Leo D`Caprio!</Heading>
       </Oscar>
       <Button handleClick={(e) => console.log('clicked', e)}/>
-      <Input value={inputValue}
-        handleChange={handleChange}/>
-        <Container styles={{border: '1px solid gray', padding: '1em'}}/>
-        <LoggedIn/>
-        <Counter/>
+      <Input value={inputValue} handleChange={handleChange}/>
+      <Container styles={{border: '1px solid gray', padding: '1em'}}/>
+      <LoggedIn/>
+      <Counter/>
+      <ThemeContextProvider>
+        <Box/>
+      </ThemeContextProvider>
+      <UserContextProvide>
+        <User/>
+      </UserContextProvide>
+      <DomRef/>
+      <MutableRef/>
+      <CounterClass message='The counter value '/>
     </div>
   );
 }
