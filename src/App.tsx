@@ -18,16 +18,21 @@ import { User } from './components/context/User';
 import { DomRef } from './components/ref/DomRef';
 import { MutableRef } from './components/ref/MutableRef';
 import CounterClass from './components/class/Counter';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
+import { List } from './components/generics/List';
+import RandomNumber from './components/restriction/RandomNumber';
+import Toast from './components/templateLiterals/Toast';
+import CustomButton from './components/html/Button';
+import { Text } from './components/polymorphic/Text';
 
 const nameList = [{
     first: 'Karry',
     last: 'Grant'
-  },
-  {
+  }, {
     first: 'Princess',
     last: 'Diana'
-  },
-  {
+  }, {
     first: 'Bruce',
     last: 'Wayne'
   }]
@@ -63,6 +68,27 @@ function App() {
       <DomRef/>
       <MutableRef/>
       <CounterClass message='The counter value '/>
+      <Private isLoggedIn={true} component={Profile}/>
+      <List
+        items={['Batman', 'Superman', 'Winder Woman']}
+        onClick={(item)=>console.log(item)}
+      />
+      <List
+        items={[1, 2, 3]}
+        onClick={(item)=>console.log(item)}
+      />
+      <List
+        items={nameList}
+        onClick={(item)=>console.log(item)}
+      />
+      <RandomNumber value={10} isPositive />
+      <Toast position='center'/>
+      <CustomButton variant='primary' onClick={()=>console.log('Clicked')} >
+        Primary Button
+      </CustomButton>
+      <Text as='h1' size='lg'>Heading</Text>
+      <Text as='p' size='md'>Paragraph</Text>
+      <Text as='label' htmlFor='lableId' size='sm' color='secondary'>label</Text>
     </div>
   );
 }

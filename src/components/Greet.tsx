@@ -1,5 +1,5 @@
 type GreetProps = {
-name: string
+  name: string
 }
 
 export default function Greet(props: GreetProps) {
